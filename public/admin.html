@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Betty2 Casino Demo · Admin</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+  </head>
+  <body class="page page-admin">
+    <script type="module" src="./js/bootstrap.js"></script>
+    <header class="topbar">
+      <div class="brand">
+        <span class="crest" aria-hidden="true">&#9889;</span>
+        <span class="brand-name">Betty2 Command Deck</span>
+      </div>
+      <nav class="topbar-actions">
+        <a class="button button-ghost" href="./profile.html">Profile</a>
+        <a class="button button-ghost" href="./menu.html">Menu</a>
+        <button class="button button-secondary" id="logout-button" type="button">
+          Log Out
+        </button>
+      </nav>
+    </header>
+    <main class="shell admin-shell">
+      <section class="card admin-summary">
+        <header class="card-header">
+          <p class="eyebrow">Operations</p>
+          <h1 class="title">Command Center Telemetry</h1>
+          <p class="subtitle">Synthetic data only — Supabase hookup pending.</p>
+        </header>
+        <div class="admin-stats" id="admin-stats"></div>
+      </section>
+      <div class="admin-grid">
+        <section class="card admin-feed" aria-labelledby="recent-wagers-title">
+          <header class="card-header">
+            <h2 class="section-title" id="recent-wagers-title">Recent Wagers</h2>
+            <p class="subtitle">Rolling window of mock submissions.</p>
+          </header>
+          <ul class="feed" id="admin-wagers" aria-live="polite"></ul>
+        </section>
+        <section class="card admin-table" aria-labelledby="sessions-title">
+          <header class="card-header">
+            <h2 class="section-title" id="sessions-title">Active Sessions</h2>
+            <p class="subtitle">Session IDs with mock uptime.</p>
+          </header>
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Session</th>
+                <th>Uptime</th>
+              </tr>
+            </thead>
+            <tbody id="admin-sessions"></tbody>
+          </table>
+        </section>
+        <section class="card admin-table" aria-labelledby="players-title">
+          <header class="card-header">
+            <h2 class="section-title" id="players-title">Players</h2>
+            <p class="subtitle">Summary of current risk posture.</p>
+          </header>
+          <table>
+            <thead>
+              <tr>
+                <th>Commander</th>
+                <th>Risk</th>
+                <th>Pace</th>
+                <th>Volatility</th>
+                <th>Wallet</th>
+              </tr>
+            </thead>
+            <tbody id="admin-players"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="./js/ui/admin.js"></script>
+  </body>
+</html>

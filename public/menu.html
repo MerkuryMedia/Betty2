@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Betty2 Casino Demo · Menu</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+  </head>
+  <body class="page page-menu">
+    <script type="module" src="./js/bootstrap.js"></script>
+    <header class="topbar">
+      <div class="brand">
+        <span class="crest" aria-hidden="true">&#9889;</span>
+        <span class="brand-name">Betty2 Command Deck</span>
+      </div>
+      <nav class="topbar-actions">
+        <a class="button button-ghost" href="./profile.html">Profile</a>
+        <button class="button button-secondary" id="logout-button" type="button">
+          Log Out
+        </button>
+      </nav>
+    </header>
+    <main class="shell menu-shell">
+      <section class="card menu-hero">
+        <header class="card-header">
+          <p class="eyebrow">Operations Hangar</p>
+          <h1 class="title">Select Your Simulation</h1>
+          <p class="subtitle">
+            Engage high-tempo experiences with your command capital. Slots are standing by.
+          </p>
+        </header>
+        <div class="menu-actions">
+          <a class="button button-primary" href="./profile.html">View Profile</a>
+          <button class="button button-secondary" id="open-slots" type="button">
+            Play Slots
+          </button>
+        </div>
+        <section class="card panel" aria-labelledby="slots-card-title">
+          <header class="card-header">
+            <h2 class="section-title" id="slots-card-title">Slots</h2>
+            <p class="subtitle">High volatility, tuned for adrenaline.</p>
+          </header>
+          <p class="body-text">
+            Launch the slots simulator to test your mettle. Results feed directly into your live telemetry.
+          </p>
+        </section>
+      </section>
+      <section class="card menu-list">
+        <header class="card-header">
+          <h2 class="section-title">Game Catalog</h2>
+          <p class="subtitle">Fetched from placeholder data sources.</p>
+        </header>
+        <ul class="game-list" id="game-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <div class="modal" id="slots-modal" hidden>
+      <div class="modal-backdrop" data-dismiss="modal"></div>
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="slots-modal-title">
+        <header class="modal-header">
+          <h2 class="modal-title" id="slots-modal-title">Slots Simulator</h2>
+          <button class="button button-ghost" type="button" data-dismiss="modal">Close</button>
+        </header>
+        <div class="modal-body">
+          <div class="reels" aria-hidden="true">?? ?? ??</div>
+          <label class="field">
+            <span class="field-label">Stake Amount</span>
+            <input id="slots-stake" type="number" min="1" max="1000" step="1" value="25" />
+          </label>
+        </div>
+        <footer class="modal-footer">
+          <button class="button button-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <button class="button button-primary" id="slots-spin" type="button">Spin</button>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="./js/ui/menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+# Environment overrides
+public/js/env.local.js
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
