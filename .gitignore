@@ -1,5 +1,5 @@
 # Environment overrides
-public/js/env.local.js
+docs/js/env.local.js
 
 # OS / editor junk
 .DS_Store
