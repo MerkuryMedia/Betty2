@@ -23,10 +23,10 @@ function renderGame(game) {
       <span style="color: rgba(160, 176, 176, 0.7);">${game.game_id}</span>
     </header>
     <p style="margin: 12px 0 4px; color: var(--color-soft-steel);">
-      Win Ref: ${formatPercent(game.p_win_ref)} · Tempo: ${game.tpm_ref} TPM
+      Win Ref: ${formatPercent(game.p_win_ref)} | Tempo: ${game.tpm_ref} TPM
     </p>
     <p style="margin: 0; color: rgba(240, 240, 240, 0.7);">
-      Stakes ${formatCurrency(game.min_bet)} – ${formatCurrency(game.max_bet)}
+      Stakes ${formatCurrency(game.min_bet)} - ${formatCurrency(game.max_bet)}
     </p>
   `;
   return item;

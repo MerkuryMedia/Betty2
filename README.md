@@ -42,7 +42,7 @@ The app ships with placeholder Supabase credentials in `public/js/env.example.js
 ## Documentation
 
 - `docs/OVERVIEW.md` explains the system at a high level.
-- `docs/FLOWS.md` maps user journeys (Login ? Profile ? Menu ? Wager ? Live updates).
+- `docs/FLOWS.md` maps user journeys (Login -> Profile -> Menu -> Wager -> Live updates).
 - `docs/SUPABASE_INTEGRATION_TODO.md` provides the exact checklist to replace the mock data source with Supabase.
 
 ## Deployment

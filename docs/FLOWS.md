@@ -1,6 +1,6 @@
 # User Flows
 
-## Login ? Profile
+## Login -> Profile
 
 1. User lands on `index.html`.
 2. Enters a username and submits the form.
@@ -8,14 +8,14 @@
 4. `session.js` stores the `user_id` and generates a `session_id` in `localStorage`.
 5. Browser navigates to `profile.html`.
 
-## Profile ? Live Updates
+## Profile -> Live Updates
 
 1. `profile.js` loads the active session and calls `fetchProfile`.
 2. Score chips render Risk, Pace, and Volatility values pulled from `mock-profile.json`.
 3. `subscribeProfile` registers a mock timer that nudges chip values and wallet balance.
 4. UI updates animate subtly to mimic realtime data.
 
-## Navigate to Menu ? Wager Simulation
+## Navigate to Menu -> Wager Simulation
 
 1. User taps "Play Games" and moves to `menu.html`.
 2. Menu loads seed data via `fetchGames` to display available experiences.

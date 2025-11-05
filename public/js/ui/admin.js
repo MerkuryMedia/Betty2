@@ -16,7 +16,7 @@ function renderStats(stats) {
   const cards = [
     { label: 'Total Wagers', value: formatNumber(stats.totalWagers ?? 0) },
     { label: 'Total Stake', value: formatCurrency(stats.totalStake ?? 0) },
-    { label: 'Last Updated', value: stats.lastUpdated ? formatRelativeTime(stats.lastUpdated) : '—' }
+    { label: 'Last Updated', value: stats.lastUpdated ? formatRelativeTime(stats.lastUpdated) : '-' }
   ];
   cards.forEach((card) => {
     const el = document.createElement('div');
@@ -32,7 +32,7 @@ function renderWagers(entries = []) {
     const li = document.createElement('li');
     const netColor = entry.net >= 0 ? 'rgba(94, 192, 230, 0.9)' : 'rgba(255, 120, 120, 0.9)';
     li.innerHTML = `
-      <strong>${entry.game_id}</strong> · ${formatCurrency(entry.stake)} stake ·
+      <strong>${entry.game_id}</strong> - ${formatCurrency(entry.stake)} stake -
       <span style="color:${netColor};">net ${formatCurrency(entry.net)}</span>
       <br/><span style="color: rgba(160, 176, 176, 0.7);">${formatRelativeTime(entry.created_at)}</span>
     `;
@@ -47,7 +47,7 @@ function renderSessions(list = []) {
     row.innerHTML = `
       <td>${session.username}</td>
       <td>${session.session_id}</td>
-      <td>${session.last_wager_at ? formatRelativeTime(session.last_wager_at) : '—'}</td>
+      <td>${session.last_wager_at ? formatRelativeTime(session.last_wager_at) : '-'}</td>
     `;
     sessionsBody.appendChild(row);
   });

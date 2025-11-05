@@ -61,7 +61,7 @@ function updateChips(profile) {
     const value = Number(profile[key] ?? 0);
     valueEl.textContent = formatNumber(value);
     const deltaValue = Number(profile[`delta_${key}`] ?? 0);
-    const sign = deltaValue >= 0 ? '+' : '–';
+    const sign = deltaValue >= 0 ? '+' : '-';
     trendEl.textContent = `${sign}${Math.abs(deltaValue).toFixed(1)} pts (${formatRelativeTime(profile.updated_at)})`;
   });
 }
@@ -72,7 +72,7 @@ function addTelemetryEvent(event) {
   }
   const item = document.createElement('li');
   const summary = event.summary || 'Update';
-  item.innerHTML = `<strong>${event.type.toUpperCase()}</strong> · ${summary} <span style="color: rgba(160, 176, 176, 0.7);">(${formatRelativeTime(event.created_at)})</span>`;
+  item.innerHTML = `<strong>${event.type.toUpperCase()}</strong> - ${summary} <span style="color: rgba(160, 176, 176, 0.7);">(${formatRelativeTime(event.created_at)})</span>`;
   feedEl.prepend(item);
   while (feedEl.children.length > 10) {
     feedEl.removeChild(feedEl.lastChild);
