@@ -4,7 +4,7 @@ A static UI prototype for the Betty2 wager experience. The demo renders login, p
 
 ## Getting Started
 
-1. Serve the `public/` folder with any static server (VS Code Live Server, `python -m http.server`, etc.).
+1. Serve the `docs/` folder with any static server (VS Code Live Server, `python -m http.server`, etc.).
 2. Open `http://localhost:PORT/index.html`.
 3. Use the login page to create a mock session and explore the profile, menu, and admin screens.
 
@@ -13,24 +13,24 @@ A static UI prototype for the Betty2 wager experience. The demo renders login, p
 ## Project Structure
 
 ```
-public/
+docs/
   css/            # Global tokens and page-level rules
   js/             # Config, contracts, placeholder data, UI scripts
   *.html          # Login, profile, menu, admin screens
-  ...
-docs/             # Overview, flows, Supabase integration plan
+  .nojekyll       # Keeps GitHub Pages from running Jekyll
+  *.md            # Overview, flows, Supabase integration plan
 ```
 
 Key entry points:
 
-- `public/js/config.js`: Loads env placeholders and exposes `MOCK_MODE`.
-- `public/js/api/datasource.contract.js`: Contract signatures that the UI uses.
-- `public/js/api/datasource.placeholder.js`: In-memory mock implementation.
-- `public/js/bootstrap.js`: Boots the correct data source and exposes `APP_FLAGS`.
+- `docs/js/config.js`: Loads env placeholders and exposes `MOCK_MODE`.
+- `docs/js/api/datasource.contract.js`: Contract signatures that the UI uses.
+- `docs/js/api/datasource.placeholder.js`: In-memory mock implementation.
+- `docs/js/bootstrap.js`: Boots the correct data source and exposes `APP_FLAGS`.
 
 ## Mock Mode and Future Supabase Integration
 
-The app ships with placeholder Supabase credentials in `public/js/env.example.js`. If those placeholders remain, `MOCK_MODE` stays `true` and the UI uses in-memory data backed by JSON seeds. When real credentials are supplied via `public/js/env.local.js` (gitignored), `MOCK_MODE` flips to `false` and Supabase wiring can be enabled using the steps in `docs/SUPABASE_INTEGRATION_TODO.md`.
+The app ships with placeholder Supabase credentials in `docs/js/env.example.js`. If those placeholders remain, `MOCK_MODE` stays `true` and the UI uses in-memory data backed by JSON seeds. When real credentials are supplied via `docs/js/env.local.js` (gitignored), `MOCK_MODE` flips to `false` and Supabase wiring can be enabled using the steps in `docs/SUPABASE_INTEGRATION_TODO.md`.
 
 ## Brand Style Summary
 
@@ -39,15 +39,15 @@ The app ships with placeholder Supabase credentials in `public/js/env.example.js
 - **Effects:** Subtle inner/outer shadows, bevel hints on titles/buttons, cyan focus rings.
 - **Layout:** 12-column fluid grid capped at 1280px, generous outer padding, tight control spacing.
 
+## Deployment
+
+Deploy from `/docs` (GitHub Pages: main + /docs).
+
 ## Documentation
 
 - `docs/OVERVIEW.md` explains the system at a high level.
 - `docs/FLOWS.md` maps user journeys (Login -> Profile -> Menu -> Wager -> Live updates).
 - `docs/SUPABASE_INTEGRATION_TODO.md` provides the exact checklist to replace the mock data source with Supabase.
-
-## Deployment
-
-Deploy the `public/` folder via GitHub Pages or any static host. No build step is required.
 
 ## License
 

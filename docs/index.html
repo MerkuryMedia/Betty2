@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Betty2 Casino Demo - Login</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+  </head>
+  <body class="page page-login">
+    <script type="module" src="./js/bootstrap.js"></script>
+    <main class="shell">
+      <section class="card login-card">
+        <header class="card-header">
+          <p class="eyebrow">Welcome back</p>
+          <h1 class="title">Betty2 Command Deck</h1>
+          <p class="subtitle">
+            Step into the Ordo Ignis control room. Your wagers fuel the forge.
+          </p>
+        </header>
+        <form class="form" id="login-form" autocomplete="off">
+          <label class="field">
+            <span class="field-label">Username</span>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              required
+              minlength="2"
+              maxlength="32"
+              placeholder="Commander Alias"
+            />
+          </label>
+          <button class="button button-primary" type="submit">
+            Log In
+          </button>
+          <p class="status" id="login-status" role="status">MOCK_MODE active</p>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./js/ui/login.js"></script>
+  </body>
+</html>
